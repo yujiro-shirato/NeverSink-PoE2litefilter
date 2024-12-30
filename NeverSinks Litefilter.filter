@@ -727,18 +727,6 @@ Show
 	PlayEffect White
 	MinimapIcon 1 White Square
 
-#Show
-#	BaseType "Waystone"
-#	Rarity <= Rare
-#	WaystoneTier >= 14
-#	SetFontSize 40
-#	SetTextColor 255 215 0
-#	SetBackgroundColor 0 102 102
-#	SetBorderColor 255 215 0
-#	PlayAlertSound 1 300
-#	PlayEffect White
-#	MinimapIcon 1 White Square
-
 Hide
 	BaseType "Waystone"
 	Rarity <= Rare
