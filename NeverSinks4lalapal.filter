@@ -655,15 +655,13 @@ Show
 	PlayEffect White
 	MinimapIcon 1 White Square
 
-Hide
+# セケマ/アルティメイタム
+Show
 	BaseType "Barya" "Ultimatum""
 	SetFontSize 40
 	SetTextColor 150 0 0
 	SetBackgroundColor 231 180 120 200
 	SetBorderColor 150 0 0
-#	PlayAlertSound 2 300
-#	PlayEffect White
-#	MinimapIcon 1 White Square
 
 Show
 	BaseType " Fragment"
