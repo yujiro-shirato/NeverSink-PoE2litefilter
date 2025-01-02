@@ -705,8 +705,8 @@ Show
 	Rarity <= Rare
 	WaystoneTier >= 14
 	SetFontSize 40
-	SetTextColor 255 215 0
-	SetBackgroundColor 0 102 102
+	SetTextColor 224 255 255
+	SetBackgroundColor 224 255 255
 	SetBorderColor 255 215 0
 
 Show
@@ -733,6 +733,20 @@ Hide
 #-----------------------------------------------------------------------------------------------------------
 # Rare Items
 #-----------------------------------------------------------------------------------------------------------
+
+Show	# セプター
+	BaseType "Omen Sceptre" "Hallowed Sceptre" 
+	Rarity >= Rare
+	ItemLevel >= 70
+	SetFontSize 40
+	SetTextColor 233 206 75
+	SetBorderColor 0 0 200
+	PlayEffect Yellow
+	MinimapIcon 1 Yellow Diamond
+
+Hide
+    Class "Sceptres"
+    Rarity Rare
 
 Hide	# Bad Base
 	BaseType "Crackling Quarterstaff" "Cultist Bow"
@@ -817,6 +831,12 @@ Hide
 #-----------------------------------------------------------------------------------------------------------
 # Rings, Amulets, Belts
 #-----------------------------------------------------------------------------------------------------------
+
+Show	# ベルト
+	Rarity >= Normal
+	BaseType "Golden Obi" "Heavy Belt" "Utility Belt"
+	SetFontSize 40
+	SetBorderColor 255 255 255
 
 Hide
 	Rarity <= Magic
