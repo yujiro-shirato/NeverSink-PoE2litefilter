@@ -351,7 +351,6 @@ Show
 	SetTextColor 255 215 0
 	SetBorderColor 160 156 131
 	SetBackgroundColor 80 50 40
-	PlayAlertSound 1 300
 	MinimapIcon 0 Orange Triangle
 	PlayEffect Orange
 
@@ -752,6 +751,16 @@ Show	# 35% MSの可能性のある靴
 Show	# 最上位ベースのESギア
 	BaseType "Expert Waxed Jacket" "Expert Hexer's Robe" "Expert Feathered Tiara" "Expert Intricate Gloves" "Expert Feathered Sandals" "Expert Plumed Focus"
 	Rarity Rare
+	SetFontSize 40
+	SetTextColor 233 206 75
+	SetBorderColor 0 0 200
+	PlayEffect Yellow
+	MinimapIcon 1 Yellow Diamond
+
+Show	# 矢筒
+	BaseType "Volant Quiver" "Primed Quiver" 
+	Rarity >= Magic
+	ItemLevel >= 70
 	SetFontSize 40
 	SetTextColor 233 206 75
 	SetBorderColor 0 0 200
