@@ -78,7 +78,6 @@ BaseType == "Gold"
 SetTextColor 255 255 255
 SetBorderColor 255 255 255
 PlayEffect Orange Temp
-MinimapIcon 2 White Cross
 
 Show
 AreaLevel < 70
@@ -87,14 +86,12 @@ BaseType == "Gold"
 SetTextColor 255 255 255
 SetBorderColor 255 255 255
 PlayEffect Orange Temp
-MinimapIcon 2 White Cross
 
 Show
 BaseType == "Gold"
 SetTextColor 180 180 180
 SetBorderColor 0 0 0 255
 SetBackgroundColor 0 0 0 180
-MinimapIcon 2 Grey Cross
 
 #--------------------------
 # Uncut Gems
@@ -147,7 +144,7 @@ SetFontSize 40
 # Gems up to level 18 in maps don't get a special highlight
 Hide
 ItemLevel <= 18
-BaseType "Uncut Skill Gem"
+BaseType "Uncut Skill Gem" "Uncut Spirit Gem"
 SetTextColor 20 240 240
 SetBorderColor 20 240 240
 SetFontSize 35
@@ -405,6 +402,19 @@ SetFontSize 40
 # Waystones
 #--------------------------
 
+Show	# デリリウムマップ
+BaseType "Waystone"
+AnyEnchantment True
+Rarity <= Rare
+WaystoneTier >= 11
+SetFontSize 40
+SetTextColor 200 180 160
+SetBackgroundColor 60 50 40
+SetBorderColor 200 180 160
+PlayAlertSound 16 300
+PlayEffect White
+MinimapIcon 1 White Square
+
 Show #T15以上はレアリティ関係なしに表示
 BaseType "Waystone"
 Rarity <= Rare
@@ -417,10 +427,10 @@ PlayAlertSound 16 300
 PlayEffect White
 MinimapIcon 1 White Square
 
-Show # T11以上のレアリティマジック以上は表示
+Show # T14以上のレア以上は表示
 BaseType "Waystone"
-Rarity >= Magic
-WaystoneTier >= 11
+Rarity >= Rare
+WaystoneTier >= 14
 SetFontSize 40
 SetTextColor 224 255 255
 SetBackgroundColor 0 102 102
@@ -434,10 +444,10 @@ SetTextColor 0 255 153
 SetBackgroundColor 0 0 0
 SetBorderColor 0 255 153
 
-Hide #レアT10以下非表示
+Hide #レアT13以下非表示
 BaseType "Waystone"
 Rarity <= Rare
-WaystoneTier <= 10
+WaystoneTier <= 13
 SetFontSize 40
 SetTextColor 0 255 153
 SetBackgroundColor 0 0 0
@@ -465,67 +475,22 @@ Rarity Normal
 Class "Rings" "Amulets"
 SetFontSize 40
 
+Show
+Class "Rings" "Amulets"
+Rarity Magic
+SetFontSize 40
+
 Show # 需要あるベルト
 Rarity >= Normal
 BaseType "Golden Obi" "Heavy Belt" "Utility Belt"
 SetFontSize 40
 SetBorderColor 255 255 255
 
-Hide
+Hide # マジック以下のその他ベルト非表示
 Rarity <= Magic
 Class "Belts"
 
-Show
-Class "Rings" "Amulets"
-Rarity Magic
-SetFontSize 40
 
-#--------------------------
-# Rare Items
-#--------------------------
-
-Show	# 35% MSの可能性のある靴
-Class "Boots"
-Rarity Rare
-ItemLevel >= 82
-SetFontSize 40
-SetTextColor 233 206 75
-SetBorderColor 255 255 255
-PlayEffect Yellow
-MinimapIcon 1 Yellow Diamond
-
-Show	# 実用的なセプター
-BaseType "Omen Sceptre" "Hallowed Sceptre" 
-Rarity Rare
-ItemLevel >= 70
-SetFontSize 40
-SetTextColor 233 206 75
-SetBorderColor 0 0 200
-PlayEffect Yellow
-MinimapIcon 1 Yellow Diamond
-
-Show	# 最上位ベースのESギア
-BaseType "Expert Waxed Jacket" "Expert Hexer's Robe" "Expert Feathered Tiara" "Expert Intricate Gloves" "Expert Feathered Sandals" "Expert Plumed Focus"
-Rarity Rare
-SetFontSize 40
-SetTextColor 233 206 75
-SetBorderColor 0 0 200
-PlayEffect Yellow
-MinimapIcon 1 Yellow Diamond
-
-Show	# 実用的な矢筒
-BaseType "Volant Quiver" "Primed Quiver" 
-Rarity >= Magic
-ItemLevel >= 70
-SetFontSize 40
-SetTextColor 233 206 75
-SetBorderColor 0 0 200
-PlayEffect Yellow
-MinimapIcon 1 Yellow Diamond
-
-Hide # 不要なセプターは非表示
-Class "Sceptres"
-Rarity <= Rare
 
 #--------------------------
 # Salvagable Items
@@ -542,6 +507,54 @@ Quality > 10
 Rarity Magic
 SetBorderColor 255 215 0
 SetFontSize 35
+
+#--------------------------
+# Rare Items 
+# 装備の細かいカスタマイズはこのセクションで記述する
+#--------------------------
+
+Show	# 35% MSの可能性のある靴
+Class "Boots"
+Rarity Rare
+ItemLevel >= 82
+SetFontSize 40
+SetTextColor 233 206 75
+SetBorderColor 255 255 255
+PlayEffect Yellow
+MinimapIcon 1 Yellow Diamond
+
+Show	# 最上位ベースのESギア
+BaseType "Expert Waxed Jacket" "Expert Hexer's Robe" "Expert Feathered Tiara" "Expert Intricate Gloves" "Expert Feathered Sandals" "Expert Plumed Focus"
+Rarity Rare
+SetFontSize 40
+SetTextColor 233 206 75
+SetBorderColor 0 0 200
+PlayEffect Yellow
+MinimapIcon 1 Yellow Diamond
+
+Show	# 実用的なセプター
+BaseType "Omen Sceptre" "Hallowed Sceptre" 
+Rarity Rare
+ItemLevel >= 70
+SetFontSize 40
+SetTextColor 233 206 75
+SetBorderColor 0 0 200
+PlayEffect Yellow
+MinimapIcon 1 Yellow Diamond
+
+Show	# 実用的な矢筒
+BaseType "Volant Quiver" "Primed Quiver" 
+Rarity >= Magic
+ItemLevel >= 70
+SetFontSize 40
+SetTextColor 233 206 75
+SetBorderColor 0 0 200
+PlayEffect Yellow
+MinimapIcon 1 Yellow Diamond
+
+Hide # 不要なセプター・矢筒は非表示
+Class "Sceptres" "Quivers"
+Rarity <= Rare
 
 #--------------------------
 # Random Rares
