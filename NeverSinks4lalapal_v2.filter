@@ -531,8 +531,8 @@ SetBorderColor 255 255 255
 PlayEffect Yellow
 MinimapIcon 1 Yellow Diamond
 
-Show	# 最上位ベースのESギア
-BaseType "Expert Waxed Jacket" "Expert Hexer's Robe" "Expert Feathered Tiara" "Expert Intricate Gloves" "Expert Feathered Sandals" "Expert Plumed Focus"
+Show	# 最上位ベースの回避・ES特化ギア
+BaseType "Expert Pathfinder Coat" "Expert Studded Vest" "Expert Serpentscale Coat" "Expert Hexer's Robe" "Expert Keth Raiment" "Expert Altar Robe"
 Rarity Rare
 SetFontSize 40
 SetTextColor 233 206 75
@@ -540,18 +540,8 @@ SetBorderColor 0 0 200
 PlayEffect Yellow
 MinimapIcon 1 Yellow Diamond
 
-Show	# 実用的なセプター
-BaseType "Omen Sceptre" "Hallowed Sceptre" 
-Rarity Rare
-ItemLevel >= 70
-SetFontSize 40
-SetTextColor 233 206 75
-SetBorderColor 0 0 200
-PlayEffect Yellow
-MinimapIcon 1 Yellow Diamond
-
-Show	# 実用的な矢筒
-BaseType "Volant Quiver" "Primed Quiver" 
+Show	# 実用的なセプター・実用的な矢筒
+BaseType "Omen Sceptre" "Hallowed Sceptre" "Expert Dualstring Bow"
 Rarity >= Rare
 ItemLevel >= 70
 SetFontSize 40
@@ -560,8 +550,8 @@ SetBorderColor 0 0 200
 PlayEffect Yellow
 MinimapIcon 1 Yellow Diamond
 
-Hide # 不要なセプター・矢筒は非表示
-Class "Sceptres" "Quivers"
+Hide # 不要なセプター・矢筒・弓は非表示
+Class "Sceptres" "Quivers" "Bows"
 Rarity <= Rare
 
 #--------------------------
@@ -592,7 +582,7 @@ Class "Flasks"
 
 Show # Good BaseはMagic以上表示
 BaseType == "Amethyst Ring" "Attuned Wand" "Breach Ring" "Chiming Staff" "Expert Altar Robe" "Expert Barrier Quarterstaff" "Expert Bombard Crossbow" "Expert Brigand Mace" "Expert Cloaked Mail" "Expert Construct Hammer" "Expert Crumbling Maul" "Expert Doubled Gauntlets" "Expert Dualstring Bow" "Expert Dyad Crossbow" "Expert Edged Buckler" "Expert Elite Greathelm" "Expert Feathered Sandals" "Expert Feathered Targe" "Expert Feathered Tiara" "Expert Forlorn Crossbow" "Expert Goldcast Cuffs" "Expert Heavy Crown" "Expert Hexer's Robe" "Expert Hunter Hood" "Expert Hunting Shoes" "Expert Intricate Gloves" "Expert Iron Cuirass" "Expert Keth Raiment" "Expert Leaden Greathammer" "Expert Lizardscale Boots" "Expert Moulded Mitts" "Expert Oak Greathammer" "Expert Omen Crest Shield" "Expert Pathfinder Coat" "Expert Pelt Leggings" "Expert Pelt Mantle" "Expert Plumed Focus" "Expert Rogue Armour" "Expert Sacrificial Mantle" "Expert Scale Mail" "Expert Scalper's Jacket" "Expert Serpentscale Coat" "Expert Shaman Mantle" "Expert Shielded Helm" "Expert Slicing Quarterstaff" "Expert Spined Bracers" "Expert Spiral Wraps" "Expert Stacked Sabatons" "Expert Steel Plate" "Expert Stone Greaves" "Expert Stone Tower Shield" "Expert Studded Vest" "Expert Tribal Mask" "Expert Vaal Cuirass" "Expert Warpick" "Expert Waxed Jacket" "Expert Wayfarer Jacket" "Expert Zealot Bow" "Omen Sceptre" "Plate Belt" "Primed Quiver" "Prismatic Ring" "Rattling Sceptre" "Siphoning Wand" "Solar Amulet" "Voltaic Staff"
-Rarity >= Magic
+Rarity >= Rare
 
 Hide
 AreaLevel >= 78
