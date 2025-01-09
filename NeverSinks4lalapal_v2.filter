@@ -79,6 +79,14 @@ SetTextColor 255 255 255
 SetBorderColor 255 255 255
 PlayEffect Orange Temp
 
+Hide # 1000未満は非表示
+AreaLevel >= 75
+StackSize < 1000
+BaseType == "Gold"
+SetTextColor 180 180 180
+SetBorderColor 0 0 0 255
+SetBackgroundColor 0 0 0 180
+
 Show
 AreaLevel < 70
 StackSize >= 500
@@ -111,6 +119,7 @@ MinimapIcon 0 Red Star
 
 # Always make Spirit gems pop
 Show
+ItemLevel >= 19
 BaseType "Uncut Spirit Gem"
 SetTextColor 20 240 240
 SetBorderColor 20 240 240
@@ -326,9 +335,10 @@ MinimapIcon 2 White Circle
 SetFontSize 40
 
 # Currency Tier C: Vaal, Chaos, Exalt, Exotic
-Hide # 王者の欠片非表示
+Hide # 王者の欠片・変成・増強非表示
 Class "Currency"
-BaseType "Regal Shard"
+AreaLevel >= 75
+BaseType "Regal Shard" "Orb of Augmentation" "Orb of Transmutation"
 SetTextColor 220 190 132
 SetFontSize 35
 
@@ -406,7 +416,7 @@ Show	# デリリウムマップ
 BaseType "Waystone"
 AnyEnchantment True
 Rarity <= Rare
-WaystoneTier >= 11
+WaystoneTier >= 14
 SetFontSize 40
 SetTextColor 200 180 160
 SetBackgroundColor 60 50 40
@@ -481,16 +491,14 @@ Rarity Magic
 SetFontSize 40
 
 Show # 需要あるベルト
-Rarity >= Normal
-BaseType "Golden Obi" "Heavy Belt" "Utility Belt"
+Rarity Normal
+BaseType "Golden Obi" "Heavy Belt"
 SetFontSize 40
 SetBorderColor 255 255 255
 
 Hide # マジック以下のその他ベルト非表示
 Rarity <= Magic
 Class "Belts"
-
-
 
 #--------------------------
 # Salvagable Items
@@ -544,7 +552,7 @@ MinimapIcon 1 Yellow Diamond
 
 Show	# 実用的な矢筒
 BaseType "Volant Quiver" "Primed Quiver" 
-Rarity >= Magic
+Rarity >= Rare
 ItemLevel >= 70
 SetFontSize 40
 SetTextColor 233 206 75
@@ -582,9 +590,9 @@ AreaLevel > 70
 Rarity <= Magic
 Class "Flasks"
 
-Show # Good Base
+Show # Good BaseはMagic以上表示
 BaseType == "Amethyst Ring" "Attuned Wand" "Breach Ring" "Chiming Staff" "Expert Altar Robe" "Expert Barrier Quarterstaff" "Expert Bombard Crossbow" "Expert Brigand Mace" "Expert Cloaked Mail" "Expert Construct Hammer" "Expert Crumbling Maul" "Expert Doubled Gauntlets" "Expert Dualstring Bow" "Expert Dyad Crossbow" "Expert Edged Buckler" "Expert Elite Greathelm" "Expert Feathered Sandals" "Expert Feathered Targe" "Expert Feathered Tiara" "Expert Forlorn Crossbow" "Expert Goldcast Cuffs" "Expert Heavy Crown" "Expert Hexer's Robe" "Expert Hunter Hood" "Expert Hunting Shoes" "Expert Intricate Gloves" "Expert Iron Cuirass" "Expert Keth Raiment" "Expert Leaden Greathammer" "Expert Lizardscale Boots" "Expert Moulded Mitts" "Expert Oak Greathammer" "Expert Omen Crest Shield" "Expert Pathfinder Coat" "Expert Pelt Leggings" "Expert Pelt Mantle" "Expert Plumed Focus" "Expert Rogue Armour" "Expert Sacrificial Mantle" "Expert Scale Mail" "Expert Scalper's Jacket" "Expert Serpentscale Coat" "Expert Shaman Mantle" "Expert Shielded Helm" "Expert Slicing Quarterstaff" "Expert Spined Bracers" "Expert Spiral Wraps" "Expert Stacked Sabatons" "Expert Steel Plate" "Expert Stone Greaves" "Expert Stone Tower Shield" "Expert Studded Vest" "Expert Tribal Mask" "Expert Vaal Cuirass" "Expert Warpick" "Expert Waxed Jacket" "Expert Wayfarer Jacket" "Expert Zealot Bow" "Omen Sceptre" "Plate Belt" "Primed Quiver" "Prismatic Ring" "Rattling Sceptre" "Siphoning Wand" "Solar Amulet" "Voltaic Staff"
-Rarity <= Magic
+Rarity >= Magic
 
 Hide
 AreaLevel >= 78
